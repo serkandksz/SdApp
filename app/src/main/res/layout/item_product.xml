@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <import type="androidx.core.content.ContextCompat" />
+        <variable
+            name="product"
+            type="com.serkan.sdapp.fragments.Product" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="90dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:scaleType="centerCrop"
+                android:src="@{ContextCompat.getDrawable(context, product.imageRes)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_launcher_foreground" />
+
+            <TextView
+                android:id="@+id/productTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{product.title}"
+                tools:text="Android Programming"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <TextView
+                android:id="@+id/productUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{product.productUnit}"
+                tools:text="Android Programming"
+
+                app:layout_constraintStart_toStartOf="@+id/cardV"
+                app:layout_constraintTop_toBottomOf="@+id/productTitle" />
+
+            <TextView
+                android:id="@+id/productFirstCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{product.productFirstCost}"
+                tools:text="Android Programming"
+                app:layout_constraintStart_toStartOf="@+id/cardV"
+                app:layout_constraintTop_toBottomOf="@+id/productUnit" />
+
+            <TextView
+                android:id="@+id/productSecondCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{product.productSecondCost}"
+                tools:text="Android Programming"
+                app:layout_constraintStart_toStartOf="@+id/cardV"
+                app:layout_constraintTop_toBottomOf="@+id/productFirstCost" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
